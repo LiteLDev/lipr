@@ -65,7 +65,7 @@ def main() -> None:
                             exc_info=e,
                         )
 
-                variants = set(v.label for m in manifests for v in m.variants)
+                variants = {v.label for m in manifests for v in m.variants}
                 packages[repo] = IndexPackage(
                     info=head_manifest.info,
                     stargazer_count=repo_info.stargazer_count,
@@ -252,7 +252,7 @@ def _fetch_manifest(repo: str, ref: str, *, client: Client) -> Manifest:
 
         content = current_path.read_bytes()
 
-    manifest = Manifest.model_validate_json(content)
+    manifest = Manifest.model_validate_json(content, extra="allow")
 
     logger.info(f"Fetched manifest for 'github.com/{repo}@{ref}'")
 
