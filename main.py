@@ -66,7 +66,7 @@ def main() -> None:
                         )
 
                 variants = {v.label for m in manifests for v in m.variants}
-                packages[repo] = IndexPackage(
+                packages[f"github.com/{repo}"] = IndexPackage(
                     info=head_manifest.info,
                     stargazer_count=repo_info.stargazer_count,
                     updated_at=repo_info.updated_at,
@@ -81,7 +81,7 @@ def main() -> None:
                         for var in variants
                     },
                 )
-                packages_for_levilauncher[repo] = IndexPackageForLeviLauncher(
+                packages_for_levilauncher[f"github.com/{repo}"] = IndexPackageForLeviLauncher(
                     info=head_manifest.info,
                     stargazer_count=repo_info.stargazer_count,
                     updated_at=repo_info.updated_at,
