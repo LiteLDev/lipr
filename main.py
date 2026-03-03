@@ -81,27 +81,29 @@ def main() -> None:
                         for var in variants
                     },
                 )
-                packages_for_levilauncher[f"github.com/{repo}"] = IndexPackageForLeviLauncher(
-                    info=head_manifest.info,
-                    stargazer_count=repo_info.stargazer_count,
-                    updated_at=repo_info.updated_at,
-                    variants={
-                        var: IndexVariantForLeviLauncher(
-                            versions={
-                                m.version: IndexVersionForLeviLauncher(
-                                    dependencies={
-                                        k: v
-                                        for variant in m.variants
-                                        if variant.label == var
-                                        for k, v in variant.dependencies.items()
-                                    },
-                                )
-                                for m in manifests
-                                if any(v.label == var for v in m.variants)
-                            }
-                        )
-                        for var in variants
-                    },
+                packages_for_levilauncher[f"github.com/{repo}"] = (
+                    IndexPackageForLeviLauncher(
+                        info=head_manifest.info,
+                        stargazer_count=repo_info.stargazer_count,
+                        updated_at=repo_info.updated_at,
+                        variants={
+                            var: IndexVariantForLeviLauncher(
+                                versions={
+                                    m.version: IndexVersionForLeviLauncher(
+                                        dependencies={
+                                            k: v
+                                            for variant in m.variants
+                                            if variant.label == var
+                                            for k, v in variant.dependencies.items()
+                                        },
+                                    )
+                                    for m in manifests
+                                    if any(v.label == var for v in m.variants)
+                                }
+                            )
+                            for var in variants
+                        },
+                    )
                 )
 
             except Exception as e:
