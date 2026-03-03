@@ -150,7 +150,7 @@ def _discover_repos() -> list[str]:
             "--json",
             "repository",
         ],
-        capture_output=True,
+        stdout=subprocess.PIPE,
         check=True,
         text=True,
     )
@@ -165,7 +165,7 @@ def _discover_repos() -> list[str]:
 @retry(
     reraise=True,
     stop=stop_after_attempt(10),
-    wait=wait_exponential(max=60),
+    wait=wait_exponential(max=60, min=5),
 )
 def _fetch_repo_info(repo: str) -> _RepoInfo:
     completed_process = subprocess.run(
@@ -176,7 +176,7 @@ def _fetch_repo_info(repo: str) -> _RepoInfo:
             repo,
             "--json=stargazerCount,updatedAt",
         ],
-        capture_output=True,
+        stdout=subprocess.PIPE,
         check=True,
         text=True,
     )
@@ -196,7 +196,7 @@ def _fetch_versions(repo: str) -> list[str]:
 
     completed_process = subprocess.run(
         ["git", "ls-remote", "-t", "--refs", url],
-        capture_output=True,
+        stdout=subprocess.PIPE,
         check=True,
         text=True,
     )
