@@ -1,0 +1,50 @@
+{
+  "format_version": 3,
+  "format_uuid": "289f771f-2c9a-4d73-9f3f-8492495a924d",
+  "tooth": "github.com/FeixiangTMC/Stipuleroo",
+  "version": "0.0.1",
+  "info": {
+    "name": "Stipuleroo",
+    "description": "Minecraft \u57FA\u5CA9\u7248\u5BA2\u6237\u7AEF\u529F\u80FD\u6A21\u7EC4 - \u7075\u9B42\u51FA\u7A8D\u65C1\u89C2\u6A21\u5F0F \u0026 \u81EA\u52A8\u5207\u6362\u5DE5\u5177",
+    "tags": [
+      "platform:levilamina",
+      "type:mod",
+      "type:client"
+    ],
+    "avatar_url": ""
+  },
+  "variants": [
+    {
+      "label": "client",
+      "platform": "win-x64",
+      "dependencies": {
+        "github.com/LiteLDev/LeviLamina#client": "1.8.*"
+      },
+      "assets": [
+        {
+          "type": "zip",
+          "urls": [
+            "https://github.com/FeixiangTMC/Stipuleroo/releases/download/v0.0.1/Stipuleroo-windows-x64.zip"
+          ],
+          "placements": [
+            {
+              "type": "dir",
+              "src": "Stipuleroo/",
+              "dest": "mods/Stipuleroo/"
+            }
+          ]
+        }
+      ],
+      "preserve_files": [],
+      "remove_files": [],
+      "scripts": {
+        "pre_install": [],
+        "install": [],
+        "post_install": [],
+        "pre_uninstall": [],
+        "uninstall": [],
+        "post_uninstall": []
+      }
+    }
+  ]
+}
