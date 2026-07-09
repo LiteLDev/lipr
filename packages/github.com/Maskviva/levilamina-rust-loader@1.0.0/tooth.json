@@ -1,0 +1,50 @@
+{
+  "format_version": 3,
+  "format_uuid": "289f771f-2c9a-4d73-9f3f-8492495a924d",
+  "tooth": "github.com/Maskviva/levilamina-rust-loader",
+  "version": "1.0.0",
+  "info": {
+    "name": "levilamina-rust-loader",
+    "description": "Loads LeviLamina mods written in Rust (manifest type: rust).",
+    "tags": [
+      "platform:levilamina",
+      "type:mod",
+      "type:loader"
+    ],
+    "avatar_url": ""
+  },
+  "variants": [
+    {
+      "label": "",
+      "platform": "win-x64",
+      "dependencies": {
+        "github.com/LiteLDev/LeviLamina": "26.10.14"
+      },
+      "assets": [
+        {
+          "type": "zip",
+          "urls": [
+            "https://github.com/Maskviva/levilamina-rust-loader/releases/download/v0.1.2/levilamina-rust-loader-windows-x64.zip"
+          ],
+          "placements": [
+            {
+              "type": "dir",
+              "src": ".",
+              "dest": "plugins/levilamina-rust-loader/"
+            }
+          ]
+        }
+      ],
+      "preserve_files": [],
+      "remove_files": [],
+      "scripts": {
+        "pre_install": [],
+        "install": [],
+        "post_install": [],
+        "pre_uninstall": [],
+        "uninstall": [],
+        "post_uninstall": []
+      }
+    }
+  ]
+}
