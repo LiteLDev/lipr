@@ -1,0 +1,49 @@
+{
+  "format_version": 3,
+  "format_uuid": "289f771f-2c9a-4d73-9f3f-8492495a924d",
+  "tooth": "github.com/Phantom/Phantom",
+  "version": "26.20.0",
+  "info": {
+    "name": "Phantom",
+    "description": "A LeviLamina Bedrock hologram plugin inspired by DecentHolograms.",
+    "tags": [
+      "platform:levilamina",
+      "type:mod"
+    ],
+    "avatar_url": "https://example.com/phantom/avatar.png"
+  },
+  "variants": [
+    {
+      "label": "",
+      "platform": "win-x64",
+      "dependencies": {
+        "github.com/LiteLDev/LeviLamina": "26.20.*"
+      },
+      "assets": [
+        {
+          "type": "zip",
+          "urls": [
+            "https://github.com/Phantom/Phantom/releases/download/v26.20.0/Phantom-server-windows-x64.zip"
+          ],
+          "placements": [
+            {
+              "type": "dir",
+              "src": "Phantom/",
+              "dest": "plugins/Phantom/"
+            }
+          ]
+        }
+      ],
+      "preserve_files": [],
+      "remove_files": [],
+      "scripts": {
+        "pre_install": [],
+        "install": [],
+        "post_install": [],
+        "pre_uninstall": [],
+        "uninstall": [],
+        "post_uninstall": []
+      }
+    }
+  ]
+}
