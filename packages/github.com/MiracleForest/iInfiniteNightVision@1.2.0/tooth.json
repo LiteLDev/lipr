@@ -1,0 +1,67 @@
+{
+  "format_version": 3,
+  "format_uuid": "289f771f-2c9a-4d73-9f3f-8492495a924d",
+  "tooth": "github.com/MiracleForest/iInfiniteNightVision",
+  "version": "1.2.0",
+  "info": {
+    "name": "iInfiniteNightVision",
+    "description": "A Minecraft infinite night vision mod for the LeviLamina mod loader.",
+    "tags": [
+      "platform:levilamina",
+      "type:mod"
+    ],
+    "avatar_url": "https://github.com/MiracleForest/iInfiniteNightVision/blob/main/icon.jpg?raw=true"
+  },
+  "variants": [
+    {
+      "label": "",
+      "platform": "",
+      "dependencies": {},
+      "assets": [],
+      "preserve_files": [],
+      "remove_files": [],
+      "scripts": {
+        "pre_install": [
+          "echo Please specify whether to install the mod for the client. \u0026 exit 1"
+        ],
+        "install": [],
+        "post_install": [],
+        "pre_uninstall": [],
+        "uninstall": [],
+        "post_uninstall": []
+      }
+    },
+    {
+      "label": "client",
+      "platform": "win-x64",
+      "dependencies": {
+        "github.com/LiteLDev/LeviLamina#client": "26.30.*"
+      },
+      "assets": [
+        {
+          "type": "zip",
+          "urls": [
+            "https://github.com/MiracleForest/iInfiniteNightVision/releases/download/v1.2.0/iInfiniteNightVision-windows-x64.zip"
+          ],
+          "placements": [
+            {
+              "type": "dir",
+              "src": "iInfiniteNightVision/",
+              "dest": "mods/iInfiniteNightVision/"
+            }
+          ]
+        }
+      ],
+      "preserve_files": [],
+      "remove_files": [],
+      "scripts": {
+        "pre_install": [],
+        "install": [],
+        "post_install": [],
+        "pre_uninstall": [],
+        "uninstall": [],
+        "post_uninstall": []
+      }
+    }
+  ]
+}
