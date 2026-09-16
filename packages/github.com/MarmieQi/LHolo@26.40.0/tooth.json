@@ -1,0 +1,51 @@
+{
+  "format_version": 3,
+  "format_uuid": "289f771f-2c9a-4d73-9f3f-8492495a924d",
+  "tooth": "github.com/MarmieQi/LHolo",
+  "version": "26.40.0",
+  "info": {
+    "name": "LHolo",
+    "description": "\u9002\u7528\u4E8E Minecraft Bedrock Windows \u7684\u5BA2\u6237\u7AEF\u6295\u5F71\u6A21\u7EC4 / Client-side projection mod for Minecraft Bedrock Windows",
+    "tags": [
+      "platform:levilamina",
+      "type:mod"
+    ],
+    "avatar_url": ""
+  },
+  "variants": [
+    {
+      "label": "client",
+      "platform": "win-x64",
+      "dependencies": {
+        "github.com/LiteLDev/LeviLamina#client": "26.40.*"
+      },
+      "assets": [
+        {
+          "type": "zip",
+          "urls": [
+            "https://github.com/MarmieQi/LHolo/releases/download/v26.40.0/LHolo-client-windows-x64.zip"
+          ],
+          "placements": [
+            {
+              "type": "dir",
+              "src": "LHolo/",
+              "dest": "mods/LHolo/"
+            }
+          ]
+        }
+      ],
+      "preserve_files": [
+        "mods/LHolo/config/config.json"
+      ],
+      "remove_files": [],
+      "scripts": {
+        "pre_install": [],
+        "install": [],
+        "post_install": [],
+        "pre_uninstall": [],
+        "uninstall": [],
+        "post_uninstall": []
+      }
+    }
+  ]
+}
