@@ -1,0 +1,49 @@
+{
+  "format_version": 3,
+  "format_uuid": "289f771f-2c9a-4d73-9f3f-8492495a924d",
+  "tooth": "github.com/Shulker-Studio/STweaks",
+  "version": "26.51.0",
+  "info": {
+    "name": "STweaks",
+    "description": "\u6F5C\u5C0F\u8D1D\u670D\u52A1\u5668\u4E13\u7528\u63D2\u4EF6\u2014\u2014\u539F\u7248BUG\u4FEE\u590D\u4EE5\u53CA\u90E8\u5206\u529F\u80FD\u5FAE\u8C03",
+    "tags": [
+      "platform:levilamina",
+      "type:mod"
+    ],
+    "avatar_url": ""
+  },
+  "variants": [
+    {
+      "label": "",
+      "platform": "win-x64",
+      "dependencies": {
+        "github.com/LiteLDev/LeviLamina": "26.51.*"
+      },
+      "assets": [
+        {
+          "type": "zip",
+          "urls": [
+            "https://github.com/Shulker-Studio/STweaks/releases/download/v26.51.0/STweaks-server-windows-x64.zip"
+          ],
+          "placements": [
+            {
+              "type": "dir",
+              "src": "STweaks/",
+              "dest": "plugins/STweaks/"
+            }
+          ]
+        }
+      ],
+      "preserve_files": [],
+      "remove_files": [],
+      "scripts": {
+        "pre_install": [],
+        "install": [],
+        "post_install": [],
+        "pre_uninstall": [],
+        "uninstall": [],
+        "post_uninstall": []
+      }
+    }
+  ]
+}
