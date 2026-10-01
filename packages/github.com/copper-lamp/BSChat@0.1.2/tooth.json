@@ -1,0 +1,81 @@
+{
+  "format_version": 3,
+  "format_uuid": "289f771f-2c9a-4d73-9f3f-8492495a924d",
+  "tooth": "github.com/copper-lamp/BSChat",
+  "version": "0.1.2",
+  "info": {
+    "name": "Better Speech Chat",
+    "description": "\u5B9E\u65F6\u8BED\u97F3\u804A\u5929\uFF1A\u652F\u6301\u670D\u52A1\u7AEF\u6DF7\u97F3\u5E76\u672C\u5730\u8BED\u97F3\u8F6C\u6587\u5B57\uFF0C\u6DF7\u5408\u97F3\u9891\u6D41\u4E0E\u5B57\u5E55\u56DE\u4F20\u5BA2\u6237\u7AEF",
+    "tags": [
+      "platform:levilamina",
+      "type:mod"
+    ],
+    "avatar_url": ""
+  },
+  "variants": [
+    {
+      "label": "",
+      "platform": "win-x64",
+      "dependencies": {
+        "github.com/LiteLDev/LeviLamina": "26.10.14"
+      },
+      "assets": [
+        {
+          "type": "zip",
+          "urls": [
+            "https://github.com/copper-lamp/BSChat/releases/download/v0.1.2/bschat-server-windows-x64.zip"
+          ],
+          "placements": [
+            {
+              "type": "dir",
+              "src": "bschat/",
+              "dest": "plugins/bschat/"
+            }
+          ]
+        }
+      ],
+      "preserve_files": [],
+      "remove_files": [],
+      "scripts": {
+        "pre_install": [],
+        "install": [],
+        "post_install": [],
+        "pre_uninstall": [],
+        "uninstall": [],
+        "post_uninstall": []
+      }
+    },
+    {
+      "label": "client",
+      "platform": "win-x64",
+      "dependencies": {
+        "github.com/LiteLDev/LeviLamina#client": "26.10.14"
+      },
+      "assets": [
+        {
+          "type": "zip",
+          "urls": [
+            "https://github.com/copper-lamp/BSChat/releases/download/v0.1.2/bschat-client-windows-x64.zip"
+          ],
+          "placements": [
+            {
+              "type": "dir",
+              "src": "bschat/",
+              "dest": "mods/bschat/"
+            }
+          ]
+        }
+      ],
+      "preserve_files": [],
+      "remove_files": [],
+      "scripts": {
+        "pre_install": [],
+        "install": [],
+        "post_install": [],
+        "pre_uninstall": [],
+        "uninstall": [],
+        "post_uninstall": []
+      }
+    }
+  ]
+}
