@@ -1,0 +1,53 @@
+{
+  "format_version": 3,
+  "format_uuid": "289f771f-2c9a-4d73-9f3f-8492495a924d",
+  "tooth": "github.com/MRUIAW/BedrockBoatHUD",
+  "version": "1.0.1",
+  "info": {
+    "name": "BoatHUD",
+    "description": "A racing HUD and driving assistant for boats on LeviLamina clients.",
+    "tags": [
+      "platform:levilamina",
+      "type:mod",
+      "hud"
+    ],
+    "avatar_url": "https://raw.githubusercontent.com/MRUIAW/BedrockBoatHUD/refs/heads/main/pack_icon.png"
+  },
+  "variants": [
+    {
+      "label": "client",
+      "platform": "win-x64",
+      "dependencies": {
+        "github.com/LiteLDev/LeviLamina#client": "26.51.*"
+      },
+      "assets": [
+        {
+          "type": "zip",
+          "urls": [
+            "https://github.com/MRUIAW/BedrockBoatHUD/releases/download/v1.0.1/BedrockBoatHUD-client-windows-x64.zip"
+          ],
+          "placements": [
+            {
+              "type": "dir",
+              "src": "BoatHUD/",
+              "dest": "mods/BoatHUD/"
+            }
+          ]
+        }
+      ],
+      "preserve_files": [
+        "mods/BoatHUD/config/**",
+        "mods/BoatHUD/data/**"
+      ],
+      "remove_files": [],
+      "scripts": {
+        "pre_install": [],
+        "install": [],
+        "post_install": [],
+        "pre_uninstall": [],
+        "uninstall": [],
+        "post_uninstall": []
+      }
+    }
+  ]
+}
