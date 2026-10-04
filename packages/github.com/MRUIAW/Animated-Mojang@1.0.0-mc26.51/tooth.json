@@ -1,0 +1,52 @@
+{
+  "format_version": 3,
+  "format_uuid": "289f771f-2c9a-4d73-9f3f-8492495a924d",
+  "tooth": "github.com/MRUIAW/Animated-Mojang",
+  "version": "1.0.0-mc26.51",
+  "info": {
+    "name": "Animated Mojang",
+    "description": "Animated Minecraft title, 3D cave background and menu camera transitions for Bedrock 1.26.51.01 / LeviLamina 26.51.6 client.",
+    "tags": [
+      "platform:levilamina",
+      "type:mod",
+      "platform:client"
+    ],
+    "avatar_url": "https://github.com/MRUIAW.png"
+  },
+  "variants": [
+    {
+      "label": "client",
+      "platform": "win-x64",
+      "dependencies": {
+        "github.com/LiteLDev/LeviLamina#client": "26.51.6"
+      },
+      "assets": [
+        {
+          "type": "zip",
+          "urls": [
+            "https://github.com/MRUIAW/Animated-Mojang/releases/download/v1.0.0-mc26.51/Animated-Mojang-client-windows-x64.zip"
+          ],
+          "placements": [
+            {
+              "type": "dir",
+              "src": "AnimatedMojang/",
+              "dest": "mods/AnimatedMojang/"
+            }
+          ]
+        }
+      ],
+      "preserve_files": [
+        "mods/AnimatedMojang/config/config.json"
+      ],
+      "remove_files": [],
+      "scripts": {
+        "pre_install": [],
+        "install": [],
+        "post_install": [],
+        "pre_uninstall": [],
+        "uninstall": [],
+        "post_uninstall": []
+      }
+    }
+  ]
+}
