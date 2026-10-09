@@ -1,0 +1,89 @@
+{
+  "format_version": 3,
+  "format_uuid": "289f771f-2c9a-4d73-9f3f-8492495a924d",
+  "tooth": "github.com/LL-LSE-Lab/MelonRind",
+  "version": "0.1.0",
+  "info": {
+    "name": "MelonRind",
+    "description": "HUD enhancement mod bringing AppleSkin-like features to Minecraft Bedrock Edition (LeviLamina Client).",
+    "tags": [
+      "platform:levilamina",
+      "type:mod"
+    ],
+    "avatar_url": "https://raw.githubusercontent.com/LL-LSE-Lab/MelonRind/main/assets/preview.png"
+  },
+  "variants": [
+    {
+      "label": "",
+      "platform": "win-x64",
+      "dependencies": {
+        "github.com/LiteLDev/LeviLamina#client": "\u003E=26.10.14"
+      },
+      "assets": [
+        {
+          "type": "zip",
+          "urls": [
+            "https://github.com/LL-LSE-Lab/MelonRind/releases/download/v0.1.0/MelonRind-0.1.0-client-windows-x64.zip",
+            "https://github.com/LL-LSE-Lab/MelonRind/releases/download/v0.1.0/MelonRind-client-windows-x64.zip",
+            "https://github.com/LL-LSE-Lab/MelonRind/releases/download/v0.1.0/MelonRind-0.1.0-windows-x64.zip"
+          ],
+          "placements": [
+            {
+              "type": "dir",
+              "src": "MelonRind/",
+              "dest": "mods/MelonRind"
+            }
+          ]
+        }
+      ],
+      "preserve_files": [
+        "config.json"
+      ],
+      "remove_files": [],
+      "scripts": {
+        "pre_install": [],
+        "install": [],
+        "post_install": [],
+        "pre_uninstall": [],
+        "uninstall": [],
+        "post_uninstall": []
+      }
+    },
+    {
+      "label": "client",
+      "platform": "win-x64",
+      "dependencies": {
+        "github.com/LiteLDev/LeviLamina#client": "\u003E=26.10.14"
+      },
+      "assets": [
+        {
+          "type": "zip",
+          "urls": [
+            "https://github.com/LL-LSE-Lab/MelonRind/releases/download/v0.1.0/MelonRind-0.1.0-client-windows-x64.zip",
+            "https://github.com/LL-LSE-Lab/MelonRind/releases/download/v0.1.0/MelonRind-client-windows-x64.zip",
+            "https://github.com/LL-LSE-Lab/MelonRind/releases/download/v0.1.0/MelonRind-0.1.0-windows-x64.zip"
+          ],
+          "placements": [
+            {
+              "type": "dir",
+              "src": "MelonRind/",
+              "dest": "mods/MelonRind"
+            }
+          ]
+        }
+      ],
+      "preserve_files": [
+        "config.json"
+      ],
+      "remove_files": [],
+      "scripts": {
+        "pre_install": [],
+        "install": [],
+        "post_install": [],
+        "pre_uninstall": [],
+        "uninstall": [],
+        "post_uninstall": []
+      }
+    }
+  ]
+}
