@@ -1,0 +1,54 @@
+{
+  "format_version": 3,
+  "format_uuid": "289f771f-2c9a-4d73-9f3f-8492495a924d",
+  "tooth": "github.com/spygamingog/Animated-Mojang-Android",
+  "version": "1.0.0",
+  "info": {
+    "name": "Animated Mojang (Android ARM64)",
+    "description": "Animated Minecraft title, 60 FPS real-time 3D cave background, and cinematic camera transitions for Minecraft Bedrock on LeviLauncher (Android ARM64). Ported by SpyGamingOG. Requires LeviLamroid.",
+    "tags": [
+      "platform:levilamroid",
+      "platform:levilaunchroid",
+      "platform:android-arm64",
+      "type:mod",
+      "platform:client"
+    ],
+    "avatar_url": "https://github.com/spygamingog.png"
+  },
+  "variants": [
+    {
+      "label": "client",
+      "platform": "android-arm64",
+      "dependencies": {
+        "github.com/spygamingog/LeviLamroid": "\u003E=1.0.0-beta"
+      },
+      "assets": [
+        {
+          "type": "zip",
+          "urls": [
+            "https://github.com/spygamingog/Animated-Mojang-Android/releases/download/v1.0.0/AnimatedMojang-1.0.0-android-arm64.zip"
+          ],
+          "placements": [
+            {
+              "type": "dir",
+              "src": "AnimatedMojang/",
+              "dest": "mods/AnimatedMojang/"
+            }
+          ]
+        }
+      ],
+      "preserve_files": [
+        "mods/AnimatedMojang/config/config.json"
+      ],
+      "remove_files": [],
+      "scripts": {
+        "pre_install": [],
+        "install": [],
+        "post_install": [],
+        "pre_uninstall": [],
+        "uninstall": [],
+        "post_uninstall": []
+      }
+    }
+  ]
+}
