@@ -299,7 +299,7 @@ def migrate_manifest(raw_content: bytes) -> bytes:
             [
                 "npx",
                 "-y",
-                "@futrime/lip",
+                "@levimc/lip",
                 "migrate",
                 str(legacy_path),
                 str(migrated_path),
