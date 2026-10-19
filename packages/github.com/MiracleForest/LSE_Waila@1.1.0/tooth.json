@@ -20,7 +20,7 @@
       "label": "",
       "platform": "",
       "dependencies": {
-        "gitea.litebds.com/LiteLDev/legacy-script-engine-quickjs": "\u003E=0.7.9",
+        "github.com/LiteLDev/LegacyScriptEngine#quickjs": "\u003E=0.7.9",
         "github.com/GroupMountain/GMLIB": "\u003E=0.12.7",
         "github.com/GroupMountain/GMLIB-LegacyRemoteCallApi": "\u003E=0.12.8"
       },

@@ -19,7 +19,7 @@
       "platform": "",
       "dependencies": {
         "github.com/LiteLDev/LeviLamina": "\u003E=0.11.1",
-        "gitea.litebds.com/LiteLDev/legacy-script-engine-nodejs": "\u003E=0.6.2"
+        "github.com/LiteLDev/LegacyScriptEngine#nodejs": "\u003E=0.6.2"
       },
       "assets": [
         {
