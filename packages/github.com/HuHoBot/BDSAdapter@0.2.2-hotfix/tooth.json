@@ -17,7 +17,7 @@
       "label": "",
       "platform": "",
       "dependencies": {
-        "gitea.litebds.com/LiteLDev/legacy-script-engine-quickjs": "\u003E=0.7.9"
+        "github.com/LiteLDev/LegacyScriptEngine#quickjs": "\u003E=0.7.9"
       },
       "assets": [],
       "preserve_files": [],

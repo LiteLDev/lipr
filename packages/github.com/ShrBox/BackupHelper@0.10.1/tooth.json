@@ -17,7 +17,7 @@
       "label": "",
       "platform": "win-x64",
       "dependencies": {
-        "git.levimc.org/ShrBox/7-zip": "24.*",
+        "github.com/LiteLDev/7-zip-tooth": "26.*",
         "github.com/LiteLDev/LeviLamina": "1.4.*"
       },
       "assets": [

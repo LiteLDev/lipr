@@ -39,7 +39,7 @@
       "dependencies": {
         "github.com/LiteLDev/LegacyRemoteCall": "0.16.*",
         "github.com/LiteLDev/LegacyMoney": "0.16.*",
-        "git.levimc.org/ShrBox/7-zip": "24.*"
+        "github.com/LiteLDev/7-zip-tooth": "26.*"
       },
       "assets": [
         {
