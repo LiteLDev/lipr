@@ -1,0 +1,52 @@
+{
+  "format_version": 3,
+  "format_uuid": "289f771f-2c9a-4d73-9f3f-8492495a924d",
+  "tooth": "github.com/theaddonn/Do-A-Barrel-Roll-Bedrock",
+  "version": "0.1.0-mc26.51",
+  "info": {
+    "name": "Do a Barrel Roll",
+    "description": "Full pitch, yaw and roll elytra flight for Minecraft Bedrock, ported from the Do a Barrel Roll Java mod.",
+    "tags": [
+      "platform:levilamina",
+      "type:mod",
+      "platform:client"
+    ],
+    "avatar_url": "https://github.com/theaddonn.png"
+  },
+  "variants": [
+    {
+      "label": "client",
+      "platform": "win-x64",
+      "dependencies": {
+        "github.com/LiteLDev/LeviLamina#client": "26.51.6"
+      },
+      "assets": [
+        {
+          "type": "zip",
+          "urls": [
+            "https://github.com/theaddonn/Do-A-Barrel-Roll-Bedrock/releases/download/v0.1.0-mc26.51/Do-A-Barrel-Roll-Bedrock-client-windows-x64.zip"
+          ],
+          "placements": [
+            {
+              "type": "dir",
+              "src": "DoABarrelRoll/",
+              "dest": "mods/DoABarrelRoll/"
+            }
+          ]
+        }
+      ],
+      "preserve_files": [
+        "mods/DoABarrelRoll/config/config.json"
+      ],
+      "remove_files": [],
+      "scripts": {
+        "pre_install": [],
+        "install": [],
+        "post_install": [],
+        "pre_uninstall": [],
+        "uninstall": [],
+        "post_uninstall": []
+      }
+    }
+  ]
+}
