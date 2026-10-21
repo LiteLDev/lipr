@@ -1,0 +1,168 @@
+{
+  "format_version": 3,
+  "format_uuid": "289f771f-2c9a-4d73-9f3f-8492495a924d",
+  "tooth": "github.com/HosihikariFramework/Shim",
+  "version": "0.5.0",
+  "info": {
+    "name": "\u661F\u5149",
+    "description": "\u628A CLR \u6258\u7BA1\u8FDB BDS\uFF0C\u5E76\u628A\u63D2\u4EF6\u7BA1\u7406\u4EA4\u7ED9\u661F\u5149\u6846\u67B6\u6838\u5FC3",
+    "tags": [
+      "platform:levilamina",
+      "platform:linux",
+      "platform:endstone",
+      "type:mod"
+    ],
+    "avatar_url": ""
+  },
+  "variants": [
+    {
+      "label": "",
+      "platform": "linux-x64",
+      "dependencies": {},
+      "assets": [
+        {
+          "type": "zip",
+          "urls": [
+            "https://github.com/HosihikariFramework/Shim/releases/download/v0.5.0/hosihikari-selfhosted-linux-x64.zip"
+          ],
+          "placements": [
+            {
+              "type": "file",
+              "src": "hosihikari-server",
+              "dest": "hosihikari-server"
+            },
+            {
+              "type": "dir",
+              "src": "hosihikari/",
+              "dest": "plugins/hosihikari/"
+            }
+          ]
+        }
+      ],
+      "preserve_files": [],
+      "remove_files": [],
+      "scripts": {
+        "pre_install": [],
+        "install": [],
+        "post_install": [
+          "chmod \u002Bx hosihikari-server"
+        ],
+        "pre_uninstall": [],
+        "uninstall": [],
+        "post_uninstall": []
+      }
+    },
+    {
+      "label": "levilamina",
+      "platform": "win-x64",
+      "dependencies": {
+        "github.com/LiteLDev/LeviLamina": "26.51.*"
+      },
+      "assets": [
+        {
+          "type": "zip",
+          "urls": [
+            "https://github.com/HosihikariFramework/Shim/releases/download/v0.5.0/hosihikari-levilamina-windows-x64.zip"
+          ],
+          "placements": [
+            {
+              "type": "dir",
+              "src": "hosihikari/",
+              "dest": "plugins/hosihikari/"
+            }
+          ]
+        }
+      ],
+      "preserve_files": [],
+      "remove_files": [],
+      "scripts": {
+        "pre_install": [],
+        "install": [],
+        "post_install": [],
+        "pre_uninstall": [],
+        "uninstall": [],
+        "post_uninstall": []
+      }
+    },
+    {
+      "label": "endstone",
+      "platform": "win-x64",
+      "dependencies": {},
+      "assets": [
+        {
+          "type": "zip",
+          "urls": [
+            "https://github.com/HosihikariFramework/Shim/releases/download/v0.5.0/hosihikari-endstone-windows-x64.zip"
+          ],
+          "placements": [
+            {
+              "type": "file",
+              "src": "hosihikari.dll",
+              "dest": "plugins/hosihikari.dll"
+            },
+            {
+              "type": "file",
+              "src": "nethost.dll",
+              "dest": "nethost.dll"
+            },
+            {
+              "type": "dir",
+              "src": "hosihikari/",
+              "dest": "plugins/hosihikari/"
+            }
+          ]
+        }
+      ],
+      "preserve_files": [],
+      "remove_files": [],
+      "scripts": {
+        "pre_install": [],
+        "install": [],
+        "post_install": [],
+        "pre_uninstall": [],
+        "uninstall": [],
+        "post_uninstall": []
+      }
+    },
+    {
+      "label": "endstone_linux",
+      "platform": "linux-x64",
+      "dependencies": {},
+      "assets": [
+        {
+          "type": "zip",
+          "urls": [
+            "https://github.com/HosihikariFramework/Shim/releases/download/v0.5.0/hosihikari-endstone-linux-x64.zip"
+          ],
+          "placements": [
+            {
+              "type": "file",
+              "src": "hosihikari.so",
+              "dest": "plugins/hosihikari.so"
+            },
+            {
+              "type": "file",
+              "src": "libnethost.so",
+              "dest": "plugins/libnethost.so"
+            },
+            {
+              "type": "dir",
+              "src": "hosihikari/",
+              "dest": "plugins/hosihikari/"
+            }
+          ]
+        }
+      ],
+      "preserve_files": [],
+      "remove_files": [],
+      "scripts": {
+        "pre_install": [],
+        "install": [],
+        "post_install": [],
+        "pre_uninstall": [],
+        "uninstall": [],
+        "post_uninstall": []
+      }
+    }
+  ]
+}
