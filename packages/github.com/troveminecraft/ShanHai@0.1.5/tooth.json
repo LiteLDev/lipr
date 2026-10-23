@@ -1,0 +1,53 @@
+{
+  "format_version": 3,
+  "format_uuid": "289f771f-2c9a-4d73-9f3f-8492495a924d",
+  "tooth": "github.com/troveminecraft/ShanHai",
+  "version": "0.1.5",
+  "info": {
+    "name": "\u5C71\u0026\u6D77",
+    "description": "Minecraft \u57FA\u5CA9\u7248 Windows LL \u5730\u5F62\u751F\u6210\u6A21\u7EC4",
+    "tags": [
+      "platform:levilamina",
+      "type:mod",
+      "worldgen",
+      "terrain"
+    ],
+    "avatar_url": "https://raw.githubusercontent.com/troveminecraft/ShanHai/main/docs/assets/shan-hai.png"
+  },
+  "variants": [
+    {
+      "label": "client",
+      "platform": "win-x64",
+      "dependencies": {
+        "github.com/LiteLDev/LeviLamina#client": "26.20.7"
+      },
+      "assets": [
+        {
+          "type": "zip",
+          "urls": [
+            "https://github.com/troveminecraft/ShanHai/releases/download/v0.1.5/ShanHai-Windows-0.1.5.zip"
+          ],
+          "placements": [
+            {
+              "type": "dir",
+              "src": "karma-worldgen-client/",
+              "dest": "mods/karma-worldgen-client/"
+            }
+          ]
+        }
+      ],
+      "preserve_files": [
+        "mods/karma-worldgen-client/client-config.json"
+      ],
+      "remove_files": [],
+      "scripts": {
+        "pre_install": [],
+        "install": [],
+        "post_install": [],
+        "pre_uninstall": [],
+        "uninstall": [],
+        "post_uninstall": []
+      }
+    }
+  ]
+}
