@@ -9,7 +9,12 @@
     "tags": [
       "platform:levilamina",
       "type:mod",
-      "client"
+      "client",
+      "category:visual",
+      "category:utility",
+      "hud",
+      "food",
+      "tooltip"
     ],
     "avatar_url": "https://raw.githubusercontent.com/LiteLDev/BeetrootSkin/main/docs/logo.png"
   },

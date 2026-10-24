@@ -10,7 +10,10 @@
       "platform:levilamina",
       "type:mod",
       "client",
-      "testing"
+      "testing",
+      "category:developer",
+      "automation",
+      "input"
     ],
     "avatar_url": "https://raw.githubusercontent.com/LiteLDev/LeviHeadlessInput/main/docs/logo.png"
   },

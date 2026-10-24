@@ -9,7 +9,11 @@
     "tags": [
       "platform:levilamina",
       "type:mod",
-      "client"
+      "client",
+      "category:utility",
+      "recipe-viewer",
+      "inventory",
+      "item-list"
     ],
     "avatar_url": "https://raw.githubusercontent.com/LiteLDev/BarelyEnoughItems/main/docs/logo.png"
   },

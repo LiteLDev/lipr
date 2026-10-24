@@ -10,7 +10,11 @@
       "platform:levilamina",
       "type:mod",
       "server",
-      "client"
+      "client",
+      "category:utility",
+      "category:game-mechanics",
+      "teleport",
+      "waystones"
     ],
     "avatar_url": "https://raw.githubusercontent.com/LiteLDev/Bedstones/main/docs/logo.png"
   },
