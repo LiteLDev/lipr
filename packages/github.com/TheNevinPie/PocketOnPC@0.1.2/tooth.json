@@ -1,0 +1,50 @@
+{
+  "format_version": 3,
+  "format_uuid": "289f771f-2c9a-4d73-9f3f-8492495a924d",
+  "tooth": "github.com/TheNevinPie/PocketOnPC",
+  "version": "0.1.2",
+  "info": {
+    "name": "Pocket on PC",
+    "description": "Native touch block reach on keyboard and mouse. Windows client mod for LeviLamina 26.51.8.",
+    "tags": [
+      "platform:levilamina",
+      "type:mod",
+      "category:game-mechanics"
+    ],
+    "avatar_url": "https://raw.githubusercontent.com/TheNevinPie/PocketOnPC/main/assets/logo.png"
+  },
+  "variants": [
+    {
+      "label": "client",
+      "platform": "win-x64",
+      "dependencies": {
+        "github.com/LiteLDev/LeviLamina#client": "26.51.8"
+      },
+      "assets": [
+        {
+          "type": "zip",
+          "urls": [
+            "https://github.com/TheNevinPie/PocketOnPC/releases/download/v0.1.2/pocket-on-pc-client-windows-x64.zip"
+          ],
+          "placements": [
+            {
+              "type": "dir",
+              "src": "pocket-on-pc/",
+              "dest": "mods/pocket-on-pc/"
+            }
+          ]
+        }
+      ],
+      "preserve_files": [],
+      "remove_files": [],
+      "scripts": {
+        "pre_install": [],
+        "install": [],
+        "post_install": [],
+        "pre_uninstall": [],
+        "uninstall": [],
+        "post_uninstall": []
+      }
+    }
+  ]
+}
