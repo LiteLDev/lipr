@@ -1,0 +1,212 @@
+{
+  "format_version": 3,
+  "format_uuid": "289f771f-2c9a-4d73-9f3f-8492495a924d",
+  "tooth": "github.com/TheNevinPie/Zoomlet",
+  "version": "1.0.2",
+  "info": {
+    "name": "Zoomlet",
+    "description": "Smooth zoom for Minecraft Bedrock across supported LeviLamina clients. Hold a key, scroll to magnify, and aim precisely.",
+    "tags": [
+      "type:mod",
+      "side:client",
+      "zoom",
+      "camera",
+      "quality-of-life"
+    ],
+    "avatar_url": "assets/zoomlet-dark.png"
+  },
+  "variants": [
+    {
+      "label": "client",
+      "platform": "win-x64",
+      "dependencies": {
+        "github.com/LiteLDev/LeviLamina#client": "26.51.*"
+      },
+      "assets": [
+        {
+          "type": "zip",
+          "urls": [
+            "https://github.com/TheNevinPie/Zoomlet/releases/download/v1.0.2/Zoomlet-client-windows-x64.zip"
+          ],
+          "placements": [
+            {
+              "type": "dir",
+              "src": "zoomlet/",
+              "dest": "mods/zoomlet/"
+            }
+          ]
+        }
+      ],
+      "preserve_files": [],
+      "remove_files": [],
+      "scripts": {
+        "pre_install": [],
+        "install": [],
+        "post_install": [],
+        "pre_uninstall": [],
+        "uninstall": [],
+        "post_uninstall": []
+      }
+    },
+    {
+      "label": "client_1_21_132",
+      "platform": "win-x64",
+      "dependencies": {
+        "github.com/LiteLDev/LeviLamina#client": "1.9.9"
+      },
+      "assets": [
+        {
+          "type": "zip",
+          "urls": [
+            "https://github.com/TheNevinPie/Zoomlet/releases/download/v1.0.2/Zoomlet-mc1.21.132-client-windows-x64.zip"
+          ],
+          "placements": [
+            {
+              "type": "dir",
+              "src": "zoomlet/",
+              "dest": "mods/zoomlet/"
+            }
+          ]
+        }
+      ],
+      "preserve_files": [],
+      "remove_files": [],
+      "scripts": {
+        "pre_install": [],
+        "install": [],
+        "post_install": [],
+        "pre_uninstall": [],
+        "uninstall": [],
+        "post_uninstall": []
+      }
+    },
+    {
+      "label": "client_1_26_10",
+      "platform": "win-x64",
+      "dependencies": {
+        "github.com/LiteLDev/LeviLamina#client": "26.10.14"
+      },
+      "assets": [
+        {
+          "type": "zip",
+          "urls": [
+            "https://github.com/TheNevinPie/Zoomlet/releases/download/v1.0.2/Zoomlet-mc1.26.10-client-windows-x64.zip"
+          ],
+          "placements": [
+            {
+              "type": "dir",
+              "src": "zoomlet/",
+              "dest": "mods/zoomlet/"
+            }
+          ]
+        }
+      ],
+      "preserve_files": [],
+      "remove_files": [],
+      "scripts": {
+        "pre_install": [],
+        "install": [],
+        "post_install": [],
+        "pre_uninstall": [],
+        "uninstall": [],
+        "post_uninstall": []
+      }
+    },
+    {
+      "label": "client_1_26_20",
+      "platform": "win-x64",
+      "dependencies": {
+        "github.com/LiteLDev/LeviLamina#client": "26.20.7"
+      },
+      "assets": [
+        {
+          "type": "zip",
+          "urls": [
+            "https://github.com/TheNevinPie/Zoomlet/releases/download/v1.0.2/Zoomlet-mc1.26.20-client-windows-x64.zip"
+          ],
+          "placements": [
+            {
+              "type": "dir",
+              "src": "zoomlet/",
+              "dest": "mods/zoomlet/"
+            }
+          ]
+        }
+      ],
+      "preserve_files": [],
+      "remove_files": [],
+      "scripts": {
+        "pre_install": [],
+        "install": [],
+        "post_install": [],
+        "pre_uninstall": [],
+        "uninstall": [],
+        "post_uninstall": []
+      }
+    },
+    {
+      "label": "client_1_26_32",
+      "platform": "win-x64",
+      "dependencies": {
+        "github.com/LiteLDev/LeviLamina#client": "26.32.2"
+      },
+      "assets": [
+        {
+          "type": "zip",
+          "urls": [
+            "https://github.com/TheNevinPie/Zoomlet/releases/download/v1.0.2/Zoomlet-mc1.26.32-client-windows-x64.zip"
+          ],
+          "placements": [
+            {
+              "type": "dir",
+              "src": "zoomlet/",
+              "dest": "mods/zoomlet/"
+            }
+          ]
+        }
+      ],
+      "preserve_files": [],
+      "remove_files": [],
+      "scripts": {
+        "pre_install": [],
+        "install": [],
+        "post_install": [],
+        "pre_uninstall": [],
+        "uninstall": [],
+        "post_uninstall": []
+      }
+    },
+    {
+      "label": "client_1_26_40",
+      "platform": "win-x64",
+      "dependencies": {
+        "github.com/LiteLDev/LeviLamina#client": "26.40.6"
+      },
+      "assets": [
+        {
+          "type": "zip",
+          "urls": [
+            "https://github.com/TheNevinPie/Zoomlet/releases/download/v1.0.2/Zoomlet-mc1.26.40-client-windows-x64.zip"
+          ],
+          "placements": [
+            {
+              "type": "dir",
+              "src": "zoomlet/",
+              "dest": "mods/zoomlet/"
+            }
+          ]
+        }
+      ],
+      "preserve_files": [],
+      "remove_files": [],
+      "scripts": {
+        "pre_install": [],
+        "install": [],
+        "post_install": [],
+        "pre_uninstall": [],
+        "uninstall": [],
+        "post_uninstall": []
+      }
+    }
+  ]
+}
