@@ -1,0 +1,90 @@
+{
+  "format_version": 3,
+  "format_uuid": "289f771f-2c9a-4d73-9f3f-8492495a924d",
+  "tooth": "github.com/LiteLDev/Complementaries",
+  "version": "0.1.0",
+  "info": {
+    "name": "Complementaries",
+    "description": "Supplementaries for Minecraft Bedrock Edition: vanilla\u002B blocks and items such as jars, signposts and faucets",
+    "tags": [
+      "platform:levilamina",
+      "type:mod",
+      "server",
+      "client",
+      "category:game-mechanics",
+      "category:decoration",
+      "vanilla-plus"
+    ],
+    "avatar_url": ""
+  },
+  "variants": [
+    {
+      "label": "",
+      "platform": "win-x64",
+      "dependencies": {
+        "github.com/LiteLDev/LeviLamina": "26.51.*"
+      },
+      "assets": [
+        {
+          "type": "zip",
+          "urls": [
+            "https://github.com/LiteLDev/Complementaries/releases/download/v0.1.0/complementaries-server-windows-x64.zip"
+          ],
+          "placements": [
+            {
+              "type": "dir",
+              "src": "Complementaries/",
+              "dest": "plugins/Complementaries/"
+            }
+          ]
+        }
+      ],
+      "preserve_files": [
+        "plugins/Complementaries/config/*"
+      ],
+      "remove_files": [],
+      "scripts": {
+        "pre_install": [],
+        "install": [],
+        "post_install": [],
+        "pre_uninstall": [],
+        "uninstall": [],
+        "post_uninstall": []
+      }
+    },
+    {
+      "label": "client",
+      "platform": "win-x64",
+      "dependencies": {
+        "github.com/LiteLDev/LeviLamina#client": "26.51.*"
+      },
+      "assets": [
+        {
+          "type": "zip",
+          "urls": [
+            "https://github.com/LiteLDev/Complementaries/releases/download/v0.1.0/complementaries-client-windows-x64.zip"
+          ],
+          "placements": [
+            {
+              "type": "dir",
+              "src": "Complementaries/",
+              "dest": "mods/Complementaries/"
+            }
+          ]
+        }
+      ],
+      "preserve_files": [
+        "mods/Complementaries/config/*"
+      ],
+      "remove_files": [],
+      "scripts": {
+        "pre_install": [],
+        "install": [],
+        "post_install": [],
+        "pre_uninstall": [],
+        "uninstall": [],
+        "post_uninstall": []
+      }
+    }
+  ]
+}
