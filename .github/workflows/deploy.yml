@@ -1,0 +1,226 @@
+# Builds lipr.levimc.org from LeviMC Mods (levimc.org/mods) and deploys it to GitHub Pages; this repository stores
+# nothing else. levimc.org reads every registered repository's version tags and publishes lipr's indexes at
+# https://levimc.org/mods/lipr/ (index.json, levilauncher.json, and sources.json: where each version's tooth.json is).
+# The site serves what lipr always did:
+#   /index.json                                for lip
+#   /levilauncher.json                         for LeviLauncher before it read levimc.org/mods
+#   /packages/<tooth>@<version>/tooth.json     the manifest at the version's tag, under the tooth and version
+#                                              levimc.org files it as, migrated by `lip migrate`
+# Migrated manifests are kept in the Actions cache by tag commit, so a run only reads tags it has not seen. A version
+# whose manifest lip cannot read is left out of the indexes, as lipr always did; one GitHub does not serve right now
+# falls back to the copy the live site has. A build that looks broken fails, and Pages keeps serving the last good
+# deployment.
+name: Deploy
+
+on:
+  schedule:
+    - cron: "23 3 * * *"
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "22"
+
+      - run: npm install --global @levimc/lip
+
+      - uses: actions/cache/restore@v6
+        with:
+          path: .cache/manifests
+          key: lipr-manifests-${{ github.run_id }}
+          restore-keys: lipr-manifests-
+
+      - name: Build the site
+        shell: python
+        run: |
+          import json
+          import subprocess
+          import sys
+          import tempfile
+          import time
+          import urllib.error
+          import urllib.parse
+          import urllib.request
+          from concurrent.futures import ThreadPoolExecutor
+          from pathlib import Path
+
+          SOURCE = "https://levimc.org/mods/lipr/"
+          LIVE = "https://lipr.levimc.org/"
+          LEVILAMINA = "github.com/LiteLDev/LeviLamina"
+          MIN_PACKAGES = 100
+          MAX_UNREACHABLE = 0.05
+          SITE = Path("site")
+          CACHE = Path(".cache/manifests")
+
+
+          def fetch(url: str) -> bytes | None:
+              """The body at url; None when it is not there (404)."""
+              for attempt in range(4):
+                  try:
+                      request = urllib.request.Request(url, headers={"User-Agent": "lipr-build"})
+                      with urllib.request.urlopen(request, timeout=60) as response:
+                          return response.read()
+                  except urllib.error.HTTPError as error:
+                      if error.code == 404:
+                          return None
+                      if attempt == 3:
+                          raise
+                  except (urllib.error.URLError, TimeoutError):
+                      if attempt == 3:
+                          raise
+                  time.sleep(2**attempt)
+              return None
+
+
+          def fetch_json(url: str):
+              body = fetch(url)
+              if body is None:
+                  sys.exit(f"::error::{url} is missing")
+              return json.loads(body)
+
+
+          def migrate(raw: bytes, tooth: str, version: str) -> bytes:
+              """The manifest in the current format, under the tooth and version levimc.org files it as."""
+              data = json.loads(raw)
+              if not isinstance(data, dict):
+                  raise ValueError("tooth.json is not an object")
+              # levimc.org's repairs: the tag is the version, and the tooth is where the version is filed
+              data["tooth"] = tooth
+              data["version"] = version
+              with tempfile.TemporaryDirectory() as temp:
+                  source, target = Path(temp, "in.json"), Path(temp, "out.json")
+                  source.write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8")
+                  result = subprocess.run(["lip", "migrate", str(source), str(target)], capture_output=True)
+                  if result.returncode != 0 or not target.exists():
+                      output = (result.stderr or result.stdout).decode("utf-8", "replace").strip()
+                      raise ValueError(f"lip migrate failed: {output.splitlines()[0] if output else result.returncode}")
+                  migrated = target.read_bytes()
+                  json.loads(migrated)
+                  return migrated
+
+
+          def manifest(tooth: str, version: str, origin: dict) -> tuple[bytes | None, str]:
+              """The migrated tooth.json of a version, and where it came from: "cache" or "read"; "live" (GitHub
+              could not be reached, the live site's copy); "invalid" (none lip can read); "unreachable"."""
+              key = urllib.parse.quote(f"{tooth}@{version}", safe="")
+              cached = CACHE / f"{origin['sha']}-{key}.json"
+              if cached.exists():
+                  return cached.read_bytes(), "cache"
+              try:
+                  tag = urllib.parse.quote(origin["tag"], safe="")
+                  raw = fetch(f"https://raw.githubusercontent.com/{origin['repo']}/{tag}/tooth.json")
+              except Exception as error:
+                  print(f"::warning::{tooth}@{version}: {error}")
+                  try:
+                      live = fetch(f"{LIVE}packages/{urllib.parse.quote(f'{tooth}@{version}')}/tooth.json")
+                  except Exception:
+                      live = None
+                  return live, "live" if live is not None else "unreachable"
+              if raw is None:
+                  print(f"::warning::{tooth}@{version}: no tooth.json at {origin['tag']}")
+                  return None, "invalid"
+              try:
+                  migrated = migrate(raw, tooth, version)
+              except Exception as error:
+                  print(f"::warning::{tooth}@{version}: {error}")
+                  return None, "invalid"
+              cached.write_bytes(migrated)
+              return migrated, "read"
+
+
+          index = fetch_json(f"{SOURCE}index.json")
+          levilauncher = fetch_json(f"{SOURCE}levilauncher.json")
+          sources = fetch_json(f"{SOURCE}sources.json")["packages"]
+          for name, data in (("index.json", index), ("levilauncher.json", levilauncher)):
+              packages = data.get("packages", {})
+              if len(packages) < MIN_PACKAGES or LEVILAMINA not in packages:
+                  sys.exit(f"::error::{name} has {len(packages)} packages (LeviLamina {'in' if LEVILAMINA in packages else 'missing'})")
+
+          versions = [
+              (tooth, version)
+              for tooth, package in index["packages"].items()
+              for version in sorted({v for variant in package["variants"].values() for v in variant["versions"]})
+          ]
+          CACHE.mkdir(parents=True, exist_ok=True)
+
+
+          def build(item: tuple[str, str]) -> tuple[str, str, str]:
+              tooth, version = item
+              origin = sources.get(tooth, {}).get(version)
+              body, how = manifest(tooth, version, origin) if origin else (None, "invalid")
+              if body is not None:
+                  path = SITE / "packages" / f"{tooth}@{version}" / "tooth.json"
+                  path.parent.mkdir(parents=True, exist_ok=True)
+                  path.write_bytes(body)
+              return tooth, version, how
+
+
+          with ThreadPoolExecutor(16) as pool:
+              results = list(pool.map(build, versions))
+          counts: dict[str, int] = {}
+          for _, _, how in results:
+              counts[how] = counts.get(how, 0) + 1
+          print(f"{len(versions)} versions: {counts}")
+          unreachable = counts.get("unreachable", 0)
+          if unreachable > MAX_UNREACHABLE * len(versions):
+              sys.exit(f"::error::{unreachable} of {len(versions)} manifests could not be read")
+          missing = {(tooth, version) for tooth, version, how in results if how in ("invalid", "unreachable")}
+
+
+          # a version lip cannot install is not offered
+          def prune(data: dict) -> dict:
+              packages = {}
+              for tooth, package in data["packages"].items():
+                  variants = {}
+                  for label, variant in package["variants"].items():
+                      kept = variant["versions"]
+                      if isinstance(kept, list):
+                          kept = [v for v in kept if (tooth, v) not in missing]
+                      else:
+                          kept = {v: meta for v, meta in kept.items() if (tooth, v) not in missing}
+                      if kept:
+                          variants[label] = {**variant, "versions": kept}
+                  if variants:
+                      packages[tooth] = {**package, "variants": variants}
+              return {**data, "packages": packages}
+
+
+          for name, data in (("index.json", index), ("levilauncher.json", levilauncher)):
+              pruned = prune(data)
+              (SITE / name).write_text(json.dumps(pruned, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
+              print(f"{name}: {len(pruned['packages'])} packages")
+
+      - uses: actions/cache/save@v6
+        if: ${{ !cancelled() }}
+        with:
+          path: .cache/manifests
+          key: lipr-manifests-${{ github.run_id }}
+
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5
