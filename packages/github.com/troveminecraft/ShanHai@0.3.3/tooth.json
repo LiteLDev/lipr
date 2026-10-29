@@ -1,0 +1,54 @@
+{
+  "format_version": 3,
+  "format_uuid": "289f771f-2c9a-4d73-9f3f-8492495a924d",
+  "tooth": "github.com/troveminecraft/ShanHai",
+  "version": "0.3.3",
+  "info": {
+    "name": "\u5C71\u0026\u6D77 \u00B7 mountains\u0026seas",
+    "description": "mountains\u0026seas\uFF08\u5C71\u0026\u6D77\uFF09\uFF1AMinecraft \u57FA\u5CA9\u7248 Windows LL \u5730\u5F62\u751F\u6210\u6A21\u7EC4",
+    "tags": [
+      "platform:levilamina",
+      "type:mod",
+      "worldgen",
+      "terrain"
+    ],
+    "avatar_url": "https://raw.githubusercontent.com/troveminecraft/ShanHai/main/docs/assets/shan-hai.png"
+  },
+  "variants": [
+    {
+      "label": "client",
+      "platform": "win-x64",
+      "dependencies": {
+        "github.com/LiteLDev/LeviLamina#client": "26.51.9"
+      },
+      "assets": [
+        {
+          "type": "zip",
+          "urls": [
+            "https://github.com/troveminecraft/ShanHai/releases/download/v0.3.3/ShanHai-Windows-0.3.3.zip"
+          ],
+          "placements": [
+            {
+              "type": "dir",
+              "src": "mountains\u0026seas/",
+              "dest": "mods/mountains\u0026seas/"
+            }
+          ]
+        }
+      ],
+      "preserve_files": [
+        "mods/mountains\u0026seas/client-config.json",
+        "mods/mountains\u0026seas/seed-cache/**"
+      ],
+      "remove_files": [],
+      "scripts": {
+        "pre_install": [],
+        "install": [],
+        "post_install": [],
+        "pre_uninstall": [],
+        "uninstall": [],
+        "post_uninstall": []
+      }
+    }
+  ]
+}
