@@ -1,0 +1,52 @@
+{
+  "format_version": 3,
+  "format_uuid": "289f771f-2c9a-4d73-9f3f-8492495a924d",
+  "tooth": "github.com/Ieckseyr/HologramLib",
+  "version": "26.51.6",
+  "info": {
+    "name": "HologramLib",
+    "description": "\u524D\u7F6E\u5E93\uFF1A\u57FA\u5CA9\u7248\u534F\u8BAE\u5C42\u7EDF\u4E00\u60AC\u6D6E\u663E\u793A\u5E93 / Library: Bedrock protocol-layer unified hologram \u0026 display library",
+    "tags": [
+      "type:mod",
+      "platform:levilamina",
+      "library",
+      "lse"
+    ],
+    "avatar_url": ""
+  },
+  "variants": [
+    {
+      "label": "",
+      "platform": "win-x64",
+      "dependencies": {
+        "github.com/LiteLDev/LeviLamina": "26.51.*",
+        "github.com/LiteLDev/LegacyRemoteCall": "0.22.*"
+      },
+      "assets": [
+        {
+          "type": "zip",
+          "urls": [
+            "https://github.com/Ieckseyr/HologramLib/releases/download/v26.51.6/HologramLib.zip"
+          ],
+          "placements": [
+            {
+              "type": "dir",
+              "src": "HologramLib/",
+              "dest": "plugins/HologramLib"
+            }
+          ]
+        }
+      ],
+      "preserve_files": [],
+      "remove_files": [],
+      "scripts": {
+        "pre_install": [],
+        "install": [],
+        "post_install": [],
+        "pre_uninstall": [],
+        "uninstall": [],
+        "post_uninstall": []
+      }
+    }
+  ]
+}
